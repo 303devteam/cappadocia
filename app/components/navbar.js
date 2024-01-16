@@ -23,9 +23,14 @@ const NavContainer = styled(motion.div)`
 const NavItem = styled.p`
     position: relative;
     color: gray;
-    margin: 0px 10px;
+    margin: 0px 15px;
     cursor: pointer;
     transition: 0.3s ease;
+    font-family: 'Montserrat';
+
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
 
     &:hover {
         color: black;
