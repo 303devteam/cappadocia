@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useState } from "react";
 import { useAnimation, motion, useScroll, useMotionValue, useMotionValueEvent } from "framer-motion";
-import { ArrowRight } from "@mui/icons-material";
+import { X, Facebook, Instagram } from "@mui/icons-material";
+import { Title } from './welcomeSection'
 import styled from "styled-components";
 import Link from "next/link";
 
@@ -68,11 +69,9 @@ const Line = styled(motion.div)`
 
 const Menu = styled(motion.div)`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     top: 70px;
     right: 0;
-    bottom: 0;
-    overflow: hidden;
     position: fixed;
     z-index: 9;
     background-color: #4985c9;
@@ -86,11 +85,15 @@ const Menu = styled(motion.div)`
 const Background = styled.div`
     position: absolute;
     top: 0;
-    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: white;
     z-index: 8;
+`;
+
+const FooterSection = styled(motion.div)`
+    position: absolute;
+    top: 750px;
 `;
 
 export default function Navbar() {
@@ -192,6 +195,18 @@ export default function Navbar() {
                         ABOUT US
                     </NavItem>
                 </Link>
+                <FooterSection
+                    initial={{opacity: 0, x: 0}}
+                    transition={{delay: 0.2}}
+                    animate={open ? {opacity: 1, x: 0}: {}}
+                >
+                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+                        <Link href={``}><X style={{color: 'white', width: 35, height: 35, margin: '0px 10px'}}/></Link>
+                        <Link href={``}><Facebook style={{color: 'white', width: 35, height: 35, margin: '0px 10px'}} /></Link>
+                        <Link href={``}><Instagram style={{color: 'white', width: 35, height: 35, margin: '0px 10px'}} /></Link>
+                    </div>
+                    <Title size={'14px'}>© 2023 Lagün Dent. All Rights Reserved</Title>
+                </FooterSection>
             </Menu>
             {open ? <Background/> : null}
         </>

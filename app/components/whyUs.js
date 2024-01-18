@@ -4,6 +4,7 @@ import Image from "next/image";
 import whyus from '../../public/whyus.jpg';
 import whyus1 from '../../public/whyus1.jpeg';
 import whyus2 from '../../public/whyus2.jpeg';
+import {Text } from './welcomeSection'
 
 
 const WhyUsContainer = styled.div`
