@@ -2,6 +2,7 @@
 import styled, { css } from "styled-components";
 import Image from "next/image";
 import bannerImg from '../../public/banner01.jpg'
+import { motion } from "framer-motion";
 
 const HeroBody = styled.div`
     width: 100%;
@@ -9,10 +10,10 @@ const HeroBody = styled.div`
     padding-top: 70px;
     position: relative;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1023px) {
         justify-content: flex-end;
     }
 `;
@@ -20,24 +21,32 @@ const HeroBody = styled.div`
 const HeroContent = styled.div`
     position: absolute;
     display: flex;
-    width: 60%;
+    width: 50%;
     flex-direction: column;
     align-items: flex-start;
     padding: 100px;
     word-wrap: normal;
+
+    @media only screen and (max-width: 1023px) {
+        padding: 40px;
+        width: 60%;
+    }
 
     @media only screen and (max-width: 768px) {
         padding: 40px;
         width: 100%;
     }
 `;
-const Title = styled.p`
+
+export const Title = styled(motion.p)`
     font-size: ${(props) => (props.size)};
     color: white;
     font-weight: 800;
-    line-height: 60px;
+    line-height: ${props => props.lineheight || '60px'};
     font-family: 'Montserrat';
-    color: white;
+    color: ${props => props.color || 'white'};
+    text-decoration: ${props => props.link ? 'underline' : 'none'};
+    cursor: ${props => props.link ? 'pointer' : 'auto'};
 
     @media only screen and (max-width: 768px) {
         font-size: ${(props) => (props.mobilesize)};
@@ -53,7 +62,7 @@ const BannerImg = styled(Image)`
     @media only screen and (max-width: 768px){
         height: 300px;
     }
-`
+`;
 
 export default function WelcomeSection() {
     return(

@@ -130,6 +130,7 @@ export default function Navbar() {
                 <Link href={`/services`}><NavItem>SERVICES</NavItem></Link>
                 <Link href={`/doctors`}><NavItem>DOCTORS</NavItem></Link>
                 <Link href={`/timetable`}><NavItem>TIMETABLE</NavItem></Link>
+                <Link href={`/aboutUs`}><NavItem>ABOUT US</NavItem></Link>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
                     <Line animate={open ? {rotate: 45, margin: 0, y: 1} : {}} />
                     <Line animate={open ? {display: 'none'} : {}} />
@@ -179,6 +180,16 @@ export default function Navbar() {
                         animate={open ? {opacity: 1, x: 0}: {}}
                     >
                         TIMETABLE
+                    </NavItem>
+                </Link>
+                <Link href={`/aboutUs`}>
+                    <NavItem
+                        mobile={`${mobile}`}
+                        initial={{opacity: 0, x: 0}}
+                        transition={{delay: 0.4}}
+                        animate={open ? {opacity: 1, x: 0}: {}}
+                    >
+                        ABOUT US
                     </NavItem>
                 </Link>
             </Menu>
