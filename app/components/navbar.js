@@ -93,7 +93,7 @@ const Background = styled.div`
 
 const FooterSection = styled(motion.div)`
     position: absolute;
-    top: 750px;
+    top: 700px;
 `;
 
 export default function Navbar() {
