@@ -4,6 +4,7 @@ import Image from "next/image";
 import advanced1 from '../../public/advanced1.jpeg';
 import advanced2 from '../../public/advanced2.jpeg';
 import advanced3 from '../../public/advanced3.jpeg';
+
 const AdvancedServiceContainer = styled.div`
     width: 100%;
     height: 60vh;

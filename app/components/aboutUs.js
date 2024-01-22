@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Title } from './welcomeSection';
 import SectionImg from '../../public/sec2-img.png'
 
-const Section = styled.div`
+export const Section = styled.div`
     width: 100%;
     height: auto;
     background-color: #fff;
@@ -25,11 +25,13 @@ export const Subsection = styled.div`
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: ${props => props.alignitems || 'flex-start'};
+    justify-content: ${props => props.justifycontent || 'center'};
     padding: 5px;
 
     @media only screen and (max-width: 1023px) {
         width: 100%;
+        flex-direction: ${props => props.mobileflex || 'column'};
     }
 `;
 
@@ -38,6 +40,11 @@ export const Paragraph = styled.p`
     color: gray;
     word-wrap: normal;
     margin-bottom: 20px;
+    width: ${props => props.width || 'auto'};
+
+    @media only screen and (max-width: 1023px) {
+        width: ${props => props.mobilewidth || 'auto'};
+    }    
 `;
 
 const SectionImage = styled(Image)`
@@ -48,8 +55,7 @@ const SectionImage = styled(Image)`
         display: flex;
         align-self: center;
     }
-`
-
+`;
 
 export default function AboutUs() {
     return(

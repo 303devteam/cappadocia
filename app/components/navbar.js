@@ -132,7 +132,7 @@ export default function Navbar() {
                 <Link href={`/`}><NavItem>HOME</NavItem></Link>
                 <Link href={`/services`}><NavItem>SERVICES</NavItem></Link>
                 <Link href={`/doctors`}><NavItem>DOCTORS</NavItem></Link>
-                <Link href={`/timetable`}><NavItem>TIMETABLE</NavItem></Link>
+                <Link href={`/scheduleAppointment`}><NavItem>SCHEDULE APPOINTMENT</NavItem></Link>
                 <Link href={`/aboutUs`}><NavItem>ABOUT US</NavItem></Link>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
                     <Line animate={open ? {rotate: 45, margin: 0, y: 1} : {}} />
@@ -175,14 +175,14 @@ export default function Navbar() {
                         DOCTORS
                     </NavItem>
                 </Link>
-                <Link href={`/timetable`}>
+                <Link href={`/scheduleAppointment`}>
                     <NavItem
                         mobile={`${mobile}`}
                         initial={{opacity: 0, x: 0}}
                         transition={{delay: 0.4}}
                         animate={open ? {opacity: 1, x: 0}: {}}
                     >
-                        TIMETABLE
+                        SCHEDULE APPOINTMENT
                     </NavItem>
                 </Link>
                 <Link href={`/aboutUs`}>

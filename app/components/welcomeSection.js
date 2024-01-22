@@ -38,6 +38,7 @@ const HeroContent = styled.div`
     }
 `;
 
+//Font size, line height, color, is link, mobile font size
 export const Title = styled(motion.p)`
     font-size: ${(props) => (props.size)};
     color: white;
