@@ -202,7 +202,7 @@ export default function AboutUs() {
                         </TextSection>
                     </InfoSection>
                     <InfoSection>
-                        <Image alt="icon2" src={Icon2.src} width={100} height={100}/>
+                        <Image alt="icon2" src={Icon2.src} width={80} height={80}/>
                         <TextSection>
                             <Title size='20px' lineheight='50px' mobilesize='20px' color='#4985c9'>Emergency dental care</Title>
                             <Paragraph width='100%' mobilewidth='100%'>

@@ -12,7 +12,7 @@ export const Section = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: ${props => props.$flexdirection || 'row'};
     padding: 40px;
 
     @media only screen and (max-width: 1023px) {
@@ -22,9 +22,9 @@ export const Section = styled.div`
 `;
 export const Subsection = styled.div`
     width: ${props => props.width || 'auto'};
-    height: auto;
+    height: ${props => props.height || 'auto'};
     display: flex;
-    flex-direction: column;
+    flex-direction: ${props => props.$flexdirection || 'column'};
     align-items: ${props => props.alignitems || 'flex-start'};
     justify-content: ${props => props.justifycontent || 'center'};
     padding: 5px;
