@@ -5,6 +5,8 @@ import WhyUs from './components/whyUs'
 import AboutUs from './components/aboutUs'
 import StatsSection from './components/statsSection'
 import ServicesSection from './components/servicesSection'
+import ContactUs from './components/contactsUs'
+import Footer from './components/footer'
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <ServicesSection />
       <WhyUs />
       <AdvancedService />
+      <ContactUs />
+      <Footer />
     </div>
   )
 }

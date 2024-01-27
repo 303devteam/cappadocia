@@ -4,100 +4,34 @@ import Image from "next/image";
 import whyus from '../../public/whyus.jpg';
 import whyus1 from '../../public/whyus1.jpeg';
 import whyus2 from '../../public/whyus2.jpeg';
-import {Text } from './welcomeSection'
+import {Text } from './welcomeSection';
 
-
-const WhyUsContainer = styled.div`
-    width: 100%;
-    height: 60vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px;
-    background-color: white;
-    
-    
-`;
+import {Title} from './welcomeSection';
+import {Paragraph} from './aboutUs';
+import {Section} from './aboutUs';
+import {Subsection} from './aboutUs';
 
 
 
-const WhyUsTextContainer = styled.div`
-    position: absolute;
-    top: 0;
-    left: 250px; /* Adjust the left position for WhyUsText */
-    z-index: 1; /* Ensure the text container is on top */
-    margin-left: 340px;
-    font-family: 'Montserrat-Bold';
-
-
-`;
-
-
-const WhyUsText = styled.h1`
-    font-size: 35px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 20px;
-    color: #4985c9;
-    font-weight: bold;
-    
-   
-   
-   
-    
-    
-`;
-
-const ImageContainer = styled.div`
-    display: flex;
-    justify-content: space-around; /* Spread evenly */
-    align-items: center;
-    width: 100%;
-    margin-bottom: 40px;
-   
-   
-    
-`;
 
 
 const ImageWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 0 20px; /* Adjust the spacing between images */
-    font-family: 'Montserrat';
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    width: auto;
+    height: auto;
+    margin-bottom: 30px;
 
-    &:hover {
-        transform: scale(1.1); /* Scale up on hover */
-    }
+
+   
 `;
 
 
-const BottomTextBold = styled.div`
-    position: absolute;
-    bottom: 110px; /* Adjust the distance from the bottom */
-    left: 159px; /* Adjust the left position for BottomTextBold */
-    font-size: 23px;
-    font-family: 'Montserrat-Bold';
-    font-weight: bold;
-    
- `;
 
-const BottomText = styled.div`
-    position: absolute;
-    bottom: 15px; /* Adjust the distance from the bottom */
-    left: 161px; /* Adjust the left position for BottomTextBold */
-    font-size: 16px;
-    font-family: 'Montserrat';
-    font-weight: normal;
-    line-height: 30px;
 
-    `;
+
+
 
 
 
@@ -106,39 +40,88 @@ const BottomText = styled.div`
 export default function WhyUs() {
     return (
         <>
-            <WhyUsContainer>
-                <WhyUsTextContainer>
-                    <WhyUsText>
-                        Why choose us?
-                    </WhyUsText>
-                </WhyUsTextContainer>
+            <Section 
+            flexDirection='column'
+            
+            >
+                <Subsection
+                width='100%'
+                
+                mobileflex='column'
+                >
+                    <Title
+                    font-size='20px'
+                    color='#4985c9'
+                    lineheight='40px'
+                    size='20px'
+                    >
+                        Why Choose Us
+                    </Title>
+                </Subsection>
 
-                <ImageContainer>
+                <Subsection
+                width='100%'
+                flexDirection='row'
+                justifycontent='space-around'
+                alignitems='center'
+                mobileflex='column'
+                >
                     <ImageWrapper>
-                        <Image priority style = {{width: '300px', height: '200px'}} src={whyus}/>
-                        <h3>Panoramic X-Ray</h3>
+                        <Image src={whyus} priority style={{height: '300px', width: '450px'}}/> 
+                        <Title
+                         font-size='20px'
+                         color='#4985c9'
+                         lineheight='40px'
+                         size='20px'
+                        >
+                            Panoramic X-Rays
+                        </Title>
                     </ImageWrapper>
                     <ImageWrapper>
-                        <Image priority style = {{width: '300px', height: '200px'}} src={whyus1}/>
-                        <h3>Intraoral exam</h3>
+                        <Image src={whyus1} priority style={{height: '300px', width: '450px'}}/>
+                        <Title
+                        font-size='20px'
+                        color='#4985c9'
+                        lineheight='40px'
+                        size='20px'
+                        >
+                            Intraoral Camera
+                        </Title>
                     </ImageWrapper>
                     <ImageWrapper>
-                        <Image priority style = {{width: '300px', height: '200px'}} src={whyus2}/>
-                        <h3>Digital X-Ray</h3>
+                        <Image src={whyus2} priority style={{height: '300px', width: '450px'}}/>
+                        <Title
+                        font-size='20px'
+                        color='#4985c9'
+                        lineheight='40px'
+                        size='20px'
+                        >
+                            Digital X-Rays
+                        </Title>
                     </ImageWrapper>
-                </ImageContainer>
-                <BottomTextBold>
-                    Your dental health is important to us.
-                </BottomTextBold>
+                </Subsection>
 
-                <BottomText>
+                <Subsection
+                width='100%'
+                mobilealignitems='flex-start'
+                >
+                    <Title
+                    font-size='20px'
+                    color='black'
+                    lineheight='40px'
+                    size='20px'
+                    >
+                        Your dental health is important to us.
 
-                    That’s why we take time to do a thorough exam using state-of-the-art x-rays to get a better understanding of your particular dental condition. 
-                    Using the latest technology, we will monitor the health of your teeth, gums and mouth and be able to make a precise diagnosis and recommendations for any necessary treatments.    
-                </BottomText>           
-                   
-            </WhyUsContainer>
-            </>
+                    </Title>
+
+                    <Paragraph>
+                    Our dental health is important to us. That’s why we take time to do a thorough exam using state-of-the-art x-rays to get a better understanding of your particular dental condition. Using the latest technology, we will monitor the health of your teeth, gums and mouth and be able to make a precise diagnosis and recommendations for any necessary treatments.
+                    </Paragraph>
+                </Subsection>
+            </Section>
+        
+        </>
     );
 }
 

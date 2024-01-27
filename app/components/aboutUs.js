@@ -8,30 +8,37 @@ import SectionImg from '../../public/sec2-img.png'
 export const Section = styled.div`
     width: 100%;
     height: auto;
-    background-color: #fff;
+    background-color: ${props => props.backgroundcolor || '#fff'};
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    padding: 40px;
+    flex-direction:  ${props => props.flexDirection || 'row'};
+    padding: ${props => props.padding || '40px'};
 
     @media only screen and (max-width: 1023px) {
-        flex-direction: column;
+        flex-direction:  column;
         padding: 30px;
+        
     }
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        flex-direction: ${props => props.mobileflex || 'row'};
+        padding: 30px;
+}
+   
 `;
 export const Subsection = styled.div`
     width: ${props => props.width || 'auto'};
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: ${props => props.flexDirection || 'column'};
     align-items: ${props => props.alignitems || 'flex-start'};
     justify-content: ${props => props.justifycontent || 'center'};
-    padding: 5px;
+    padding: ${props => props.padding || '5px'};
 
     @media only screen and (max-width: 1023px) {
         width: 100%;
         flex-direction: ${props => props.mobileflex || 'column'};
+        align-items: ${props => props.mobilealignitems || 'center'};
     }
 `;
 
