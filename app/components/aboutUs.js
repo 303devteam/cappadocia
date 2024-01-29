@@ -1,81 +1,102 @@
 'use client'
-import styled from "styled-components"
-import Image from "next/image";
-import Link from "next/link";
-import { Title } from './welcomeSection';
+import { Section, Label, StyledImage, Paragraph } from "./comps";
 import SectionImg from '../../public/sec2-img.png'
-
-export const Section = styled.div`
-    width: 100%;
-    height: auto;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: ${props => props.$flexdirection || 'row'};
-    padding: 40px;
-
-    @media only screen and (max-width: 1023px) {
-        flex-direction: column;
-        padding: 30px;
-    }
-`;
-export const Subsection = styled.div`
-    width: ${props => props.width || 'auto'};
-    height: ${props => props.height || 'auto'};
-    display: flex;
-    flex-direction: ${props => props.$flexdirection || 'column'};
-    align-items: ${props => props.alignitems || 'flex-start'};
-    justify-content: ${props => props.justifycontent || 'center'};
-    padding: 5px;
-
-    @media only screen and (max-width: 1023px) {
-        width: 100%;
-        flex-direction: ${props => props.mobileflex || 'column'};
-    }
-`;
-
-export const Paragraph = styled.p`
-    font-family: 'Montserrat';
-    color: gray;
-    word-wrap: normal;
-    margin-bottom: 20px;
-    width: ${props => props.width || 'auto'};
-
-    @media only screen and (max-width: 1023px) {
-        width: ${props => props.mobilewidth || 'auto'};
-    }    
-`;
-
-const SectionImage = styled(Image)`
-    @media only screen and (max-width: 1023px) {
-        width: 60%;
-        height: 60%;
-        margin-top: 20px;
-        display: flex;
-        align-self: center;
-    }
-`;
+import Link from "next/link";
 
 export default function AboutUs() {
     return(
         <>
-            <Section>
-                <Subsection width={'50%'}>
-                    <Title color={'#4985c9'} lineheight={'40px'} size={'20px'} mobilesize={'20px'}>About us</Title>
-                    <Title color={'black'} lineheight={'40px'} size={'30px'} mobilesize={'25px'}>Dental Health promotes oral health in a new way</Title>
-                    <Paragraph>
+            <Section
+                $width='100%'
+                $mobilewidth='100%'
+                $padding='40px'
+                $mobilepadding='30px'
+                $flexdirection='row'
+                $tabflexdirection='column'
+            >
+                <Section
+                    $width='50%'
+                    $mobilewidth='100%'
+                    $tabwidth='100%'
+                    $padding='20px'
+                    $mobilepadding='10px'
+                    $flexdirection='column'
+                    $alignitems='flex-start'
+                    $mobilealignitems='flex-start'
+                >
+                    <Label
+                        $fontsize='25px'
+                        $mobilefontsize='20px'
+                        $color='#4985c9'
+                        $fontweight='800'
+                    >
+                        About us
+                    </Label>
+                    <Label
+                        $fontsize='30px'
+                        $tabfontsize='25px'
+                        $tablineheight='30px'
+                        $mobilefontsize='25px'
+                        $color='black'
+                        $fontweight='800'
+                        $lineheight='40px'
+                    >
+                        Dental Clinic promotes oral health in a new way
+                    </Label>
+                    <Paragraph
+                        $fontsize='16px'
+                        $tabfontsize='16px'
+                        $mobilefontsize='16px'
+                        $color='#595959'
+                        $fontweight='400'
+                        $lineheight='20px'
+                        style={{marginBottom: '20px'}}
+                    >
                         We wanted to create a modern oral health clinic focused on the dental experience that we wanted to make more accessible, affordable and cheaper. And of course – we offer high-quality treatments.
                     </Paragraph>
-                    <Title color={'black'} lineheight={'40px'} size={'30px'} mobilesize={'25px'}>We care for you</Title>
-                    <Paragraph>
+                    <Label
+                        $fontsize='30px'
+                        $tabfontsize='25px'
+                        $tablineheight='30px'
+                        $mobilefontsize='25px'
+                        $color='black'
+                        $fontweight='800'
+                        $lineheight='40px'
+                    >
+                        We care for you
+                    </Label>
+                    <Paragraph
+                        $fontsize='16px'
+                        $tabfontsize='16px'
+                        $mobilefontsize='16px'
+                        $color='#595959'
+                        $fontweight='400'
+                        $lineheight='20px'
+                    >
                         Our qualified dental nurses and dentists are dedicated and ready to provide superior treatment. The Nova Dental Clinic team understands the importance of clear communication with you as a patient and strives to provide high-quality guidelines and information as a part of a treatment. Our goal is for you to feel carefully listened to and adequately prepared to take care of your oral health on your own.
                     </Paragraph>
-                    <Title link={'true'} color={'#4985c9'} lineheight={'40px'} size={'20px'} mobilesize={'20px'}><Link style={{color: '#4985c9'}} href='/aboutUs'>Discover More</Link></Title>
-                </Subsection>
-                <Subsection style={{display: 'flex', alignItems: 'flex-end'}} width={'50%'}>
-                    <SectionImage src={SectionImg.src} alt={'section-img'} width={800} height={700} />
-                </Subsection>
+                    <Link href={'/aboutUs'}>
+                        <Label
+                            $link
+                            $fontsize='20px'
+                            $mobilefontsize='20px'
+                            $color='#4985c9'
+                            $fontweight='800'
+                        >
+                            Read more
+                        </Label>
+                    </Link>
+                </Section>
+                <Section
+                    $width='50%'
+                    $mobilewidth='100%'
+                    $tabwidth='50%'
+                    $padding='2s0px'
+                    $mobilepadding='10px'
+                    $flexdirection='column'
+                >
+                    <StyledImage style={{maxHeight: '550px'}} priority alt="img" src={SectionImg.src} width={1000} height={1000}/>
+                </Section>
             </Section>
         </>
     )

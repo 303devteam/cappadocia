@@ -1,147 +1,137 @@
-'use client';
-import styled from "styled-components";
-import Image from "next/image";
-import whyus from '../../public/whyus.jpg';
-import whyus1 from '../../public/whyus1.jpeg';
-import whyus2 from '../../public/whyus2.jpeg';
-import {Text } from './welcomeSection'
-
-
-const WhyUsContainer = styled.div`
-    width: 100%;
-    height: 60vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px;
-    background-color: white;
-    
-    
-`;
-
-
-
-const WhyUsTextContainer = styled.div`
-    position: absolute;
-    top: 0;
-    left: 250px; /* Adjust the left position for WhyUsText */
-    z-index: 1; /* Ensure the text container is on top */
-    margin-left: 340px;
-    font-family: 'Montserrat-Bold';
-
-
-`;
-
-
-const WhyUsText = styled.h1`
-    font-size: 35px;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 20px;
-    color: #4985c9;
-    font-weight: bold;
-    
-   
-   
-   
-    
-    
-`;
-
-const ImageContainer = styled.div`
-    display: flex;
-    justify-content: space-around; /* Spread evenly */
-    align-items: center;
-    width: 100%;
-    margin-bottom: 40px;
-   
-   
-    
-`;
-
-
-const ImageWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 20px; /* Adjust the spacing between images */
-    font-family: 'Montserrat';
-    transition: transform 0.3s ease;
-    cursor: pointer;
-
-    &:hover {
-        transform: scale(1.1); /* Scale up on hover */
-    }
-`;
-
-
-const BottomTextBold = styled.div`
-    position: absolute;
-    bottom: 110px; /* Adjust the distance from the bottom */
-    left: 159px; /* Adjust the left position for BottomTextBold */
-    font-size: 23px;
-    font-family: 'Montserrat-Bold';
-    font-weight: bold;
-    
- `;
-
-const BottomText = styled.div`
-    position: absolute;
-    bottom: 15px; /* Adjust the distance from the bottom */
-    left: 161px; /* Adjust the left position for BottomTextBold */
-    font-size: 16px;
-    font-family: 'Montserrat';
-    font-weight: normal;
-    line-height: 30px;
-
-    `;
-
-
-
-
+'use client'
+import { Section, Label, StyledImage, Paragraph } from "./comps"
+import whyus1 from "../../public/whyus.jpg"
+import whyus2 from "../../public/whyus1.jpeg"
+import whyus3 from "../../public/whyus2.jpeg"
 
 export default function WhyUs() {
-    return (
+    return(
         <>
-            <WhyUsContainer>
-                <WhyUsTextContainer>
-                    <WhyUsText>
-                        Why choose us?
-                    </WhyUsText>
-                </WhyUsTextContainer>
-
-                <ImageContainer>
-                    <ImageWrapper>
-                        <Image priority style = {{width: '300px', height: '200px'}} src={whyus}/>
-                        <h3>Panoramic X-Ray</h3>
-                    </ImageWrapper>
-                    <ImageWrapper>
-                        <Image priority style = {{width: '300px', height: '200px'}} src={whyus1}/>
-                        <h3>Intraoral exam</h3>
-                    </ImageWrapper>
-                    <ImageWrapper>
-                        <Image priority style = {{width: '300px', height: '200px'}} src={whyus2}/>
-                        <h3>Digital X-Ray</h3>
-                    </ImageWrapper>
-                </ImageContainer>
-                <BottomTextBold>
+            <Section
+                $width='100%'
+                $height='auto'
+                $flexdirection='column'
+                $alignitems='flex-start'
+                $justifycontent='flex-start'
+                $mobilealignitems='flex-start'
+            >
+                <Label
+                    $fontsize='25px'
+                    $mobilefontsize='20px'
+                    $color='#4985c9'
+                    $fontweight='800'
+                >
+                    Why Choose Us
+                </Label>
+                <Section
+                    $padding='0'
+                    $mobilepadding='0'
+                    $width='100%'
+                    $mobilewidth='100%'
+                    $bgcolor='#f2f2f2'
+                    style={{overflowX: 'scroll'}}
+                >
+                <Section
+                    $width='100%'
+                    $height='auto'
+                    $flexdirection='row'
+                    $tabflexdirection='row'
+                    $mobilewidth='700px'
+                    $mobileflexdirection='row'
+                    $mobilealignitems='flex-start'
+                    style={{alignSelf: 'flex-start'}}
+                    $padding='0'
+                    $tabpadding='50px 10px'
+                    $mobilepadding='10px'
+                >
+                    <Section
+                        $width='33%'
+                        $tabwidth='100%'
+                        $mobilewidth='100%'
+                        $height='auto'
+                        $flexdirection='column'
+                        $padding='10px'
+                        $mobilepadding='5px'
+                    >
+                        <StyledImage priority src={whyus1.src} width={1000} height={1000} alt="section-img"/>
+                        <Label
+                            $fontsize='25px'
+                            $mobilefontsize='20px'
+                            $tabfontsize='20px'
+                            $color='gray'
+                            $fontweight='600'
+                            $mobilelineheight='25px'
+                        >
+                            Panoramic X-Rays
+                        </Label>
+                    </Section>
+                    <Section
+                        $width='33%'
+                        $tabwidth='100%'
+                        $mobilewidth='100%'
+                        $height='auto'
+                        $flexdirection='column'
+                        $padding='10px'
+                        $mobilepadding='5px'
+                    >
+                        <StyledImage priority src={whyus2.src} width={5000} height={5000} alt="section-img"/>
+                        <Label
+                            $fontsize='25px'
+                            $mobilefontsize='20px'
+                            $tabfontsize='20px'
+                            $color='gray'
+                            $fontweight='600'
+                            $mobilelineheight='25px'
+                        >
+                            Intraoral Camera
+                        </Label>
+                    </Section>
+                    <Section
+                        $width='33%'
+                        $tabwidth='100%'
+                        $mobilewidth='100%'
+                        $height='auto'
+                        $flexdirection='column'
+                        $padding='10px'
+                        $mobilepadding='5px'
+                    >
+                        <StyledImage priority src={whyus3.src} width={1000} height={1000} alt="section-img"/>
+                        <Label
+                            $fontsize='25px'
+                            $mobilefontsize='20px'
+                            $tabfontsize='20px'
+                            $color='gray'
+                            $fontweight='600'
+                            $mobilelineheight='25px'
+                        >
+                            Digital X-Rays
+                        </Label>
+                    </Section>
+                </Section>
+                </Section>
+                <Label
+                    $fontsize='30px'
+                    $tabfontsize='25px'
+                    $tablineheight='30px'
+                    $mobilefontsize='25px'
+                    $color='black'
+                    $fontweight='800'
+                    $lineheight='40px'
+                    style={{marginTop: '30px'}}
+                >
                     Your dental health is important to us.
-                </BottomTextBold>
-
-                <BottomText>
-
-                    That’s why we take time to do a thorough exam using state-of-the-art x-rays to get a better understanding of your particular dental condition. 
-                    Using the latest technology, we will monitor the health of your teeth, gums and mouth and be able to make a precise diagnosis and recommendations for any necessary treatments.    
-                </BottomText>           
-                   
-            </WhyUsContainer>
-            </>
-    );
+                </Label>
+                <Paragraph
+                    $fontsize='16px'
+                    $tabfontsize='16px'
+                    $mobilefontsize='16px'
+                    $color='#595959'
+                    $fontweight='400'
+                    $lineheight='20px'
+                >
+                    Our dental health is important to us. That’s why we take time to do a thorough exam using state-of-the-art x-rays to get a better understanding of your particular dental condition. Using the latest technology, we will monitor the health of your teeth, gums and mouth and be able to make a precise diagnosis and recommendations for any necessary treatments.
+                </Paragraph>
+            </Section>
+        </>
+    )
 }
-
-
-
-// Our dental health is important to us. That’s why we take time to do a thorough exam using state-of-the-art x-rays to get a better understanding of your particular dental condition. Using the latest technology, we will monitor the health of your teeth, gums and mouth and be able to make a precise diagnosis and recommendations for any necessary treatments.

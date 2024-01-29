@@ -34,7 +34,7 @@ const NavItem = styled(motion.p)`
     transition: 0.3s ease;
     font-family: 'Montserrat';
     font-weight: 600;
-    font-size: ${(props) => (props.mobile ? '20px' : '16px')};
+    font-size: ${(props) => (props.mobile ? '18px' : '16px')};
 
     @media only screen and (max-width: 768px) {
         display: ${(props) => (props.mobile ? 'block' : 'none')};
@@ -69,7 +69,7 @@ const Line = styled(motion.div)`
 
 const Menu = styled(motion.div)`
     width: 100%;
-    height: 100vh;
+    height: 90%;
     top: 70px;
     right: 0;
     position: fixed;
@@ -89,11 +89,6 @@ const Background = styled.div`
     height: 100vh;
     background-color: white;
     z-index: 8;
-`;
-
-const FooterSection = styled(motion.div)`
-    position: absolute;
-    top: 700px;
 `;
 
 export default function Navbar() {
@@ -195,18 +190,6 @@ export default function Navbar() {
                         ABOUT US
                     </NavItem>
                 </Link>
-                <FooterSection
-                    initial={{opacity: 0, x: 0}}
-                    transition={{delay: 0.2}}
-                    animate={open ? {opacity: 1, x: 0}: {}}
-                >
-                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
-                        <Link href={``}><X style={{color: 'white', width: 35, height: 35, margin: '0px 10px'}}/></Link>
-                        <Link href={``}><Facebook style={{color: 'white', width: 35, height: 35, margin: '0px 10px'}} /></Link>
-                        <Link href={``}><Instagram style={{color: 'white', width: 35, height: 35, margin: '0px 10px'}} /></Link>
-                    </div>
-                    <Title size={'14px'}>© 2023 Lagün Dent. All Rights Reserved</Title>
-                </FooterSection>
             </Menu>
             {open ? <Background/> : null}
         </>

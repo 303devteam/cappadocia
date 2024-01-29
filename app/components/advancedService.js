@@ -1,121 +1,163 @@
-'use client';
-import styled from "styled-components";
-import Image from "next/image";
-import advanced1 from '../../public/advanced1.jpeg';
-import advanced2 from '../../public/advanced2.jpeg';
-import advanced3 from '../../public/advanced3.jpeg';
+'use client'
+import { Label, StyledImage, Section } from "./comps"
+import Img1 from '../../public/advanced1.jpeg'
+import Img2 from '../../public/advanced2.jpeg'
+import Img3 from '../../public/advanced3.jpeg'
 
-const AdvancedServiceContainer = styled.div`
-    width: 100%;
-    height: 60vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px;
-    background-color: white;
-`;
-
-const HeaderText = styled.div`
-    position: absolute;
-    top: 10px;
-    left: 300px; /* Adjust the left position for WhyUsText */
-    z-index: 1; /* Ensure the text container is on top */
-    margin-left: 340px;
-    font-family: 'Montserrat-Bold';
-    font-size: 16px;
-    color: #4985c9;
-    font-weight: bold;
-
-`;
-
-const HeaderText2 = styled.div`
-    position: absolute;
-    top: 50px;
-    left: 160px; /* Adjust the left position for WhyUsText */
-    z-index: 1; /* Ensure the text container is on top */
-    margin-left: 340px;
-    font-family: 'Montserrat-Bold';
-    font-size: 30px;
-    font-weight: bold;
-
-`;
-
-const ImageContainer = styled.div`
-    display: flex;
-    justify-content: space-around; /* Spread evenly */
-    align-items: center;
-    width: 100%;
-    
-
-`;
-
-const ImageWrapper = styled.div`
-    position:relative;
-    display: flex;
-    justify-content: space-around; /* Spread evenly */
-    align-items: center;
-    width: 100%;
-    margin-top: 120px;
-
-
-`;
-const TextBox = styled.div`
-   
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    background-color: #4985c9;
-    
-`;
-
-const ImageWithText = styled.div`
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-
-    &:hover {
-        .text-box {
-            transform: translateY(-10px);
-        }
-    }
-`;
-    
 export default function AdvancedService() {
-    return (
+    return(
         <>
-            <AdvancedServiceContainer>
-                <HeaderText>
-                    Advanced Services
-                </HeaderText>
-                <HeaderText2>
+            <Section
+                $width='100%'
+                $height='auto'
+                $flexdirection='column'
+                $alignitems='flex-start'
+                $justifycontent='flex-start'
+                $mobilealignitems='flex-start'
+                $bgcolor='#f2f2f2'
+            >
+                <Label
+                    $fontsize='25px'
+                    $mobilefontsize='20px'
+                    $color='#4985c9'
+                    $fontweight='800'
+                >
+                   Advance Services
+                </Label>
+                <Label
+                    $fontsize='30px'
+                    $tabfontsize='25px'
+                    $tablineheight='30px'
+                    $mobilefontsize='25px'
+                    $color='black'
+                    $fontweight='800'
+                    $lineheight='40px'
+                >
                     Why Choose Our Specialty Clinic?
-                </HeaderText2>
-                <ImageWrapper>
-                    <ImageWithText>
-                        <Image src={advanced1} />
-                        <TextBox className="text-box">
-                            <p>Implants</p>
-                        </TextBox>
-                    </ImageWithText>
-                    <ImageWithText>
-                        <Image src={advanced2} />
-                        <TextBox className="text-box">
-                            <p>Orthodontics</p>
-                        </TextBox>
-                    </ImageWithText>
-                    <ImageWithText>
-                        <Image src={advanced3} />
-                        <TextBox className="text-box">
-                            <p>Cosmetic Dentistry</p>
-                        </TextBox>
-                    </ImageWithText>
-                </ImageWrapper>
-            </AdvancedServiceContainer>
+                </Label>
+                <Section
+                    $padding='0'
+                    $mobilepadding='0'
+                    $width='100%'
+                    $mobilewidth='100%'
+                    $bgcolor='#f2f2f2'
+                    style={{overflowX: 'scroll'}}
+                >
+                <Section
+                    $padding='0px'
+                    $width='80%'
+                    $tabwidth='100%'
+                    $mobilewidth='680px'
+                    $mobilepadding='0px'
+                    style={{alignSelf: 'flex-start'}}
+                    $bgcolor='#f2f2f2'
+                    $flexdirection='row'
+                    $mobileflexdirection='row'
+                >
+                    <Section
+                        $width='33%'
+                        $tabwidth='100%'
+                        $mobilewidth='auto'
+                        $height='auto'
+                        $flexdirection='column'
+                        $mobilepadding='0'
+                        $padding='0'
+                        style={{margin: '20px'}}
+                        whileHover={{scale: 1.05}}
+                        transition={{duration: 0.5, type: 'spring', stiffness: 300}}
+                        $bgcolor='#f2f2f2'
+                    >
+                        <StyledImage priority src={Img1.src} width={1000} height={1000} alt="section-img"/>
+                        <Section
+                            $padding='0'
+                            $mobilepadding='5px'
+                            $bgcolor='#4985c9'
+                            $width='100%'
+                            style={{
+                                boxShadow: '0px 0px 10px 0px black',
+                            }}
+                        >
+                            <Label
+                                $fontsize='20px'
+                                $mobilefontsize='18.4px'
+                                $tabfontsize='20px'
+                                $color='white'
+                                $fontweight='800'
+                            >
+                                Implants
+                            </Label>
+                        </Section>
+                    </Section>
+                    <Section
+                        $width='33%'
+                        $tabwidth='100%'
+                        $mobilewidth='auto'
+                        $height='auto'
+                        $flexdirection='column'
+                        $mobilepadding='0'
+                        $padding='0'
+                        style={{margin: '20px'}}
+                        whileHover={{scale: 1.05}}
+                        transition={{duration: 0.5, type: 'spring', stiffness: 300}}
+                    >
+                        <StyledImage priority src={Img2.src} width={1000} height={1000} alt="section-img"/>
+                        <Section
+                            $padding='0'
+                            $mobilepadding='5px'
+                            $bgcolor='#4985c9'
+                            $width='100%'
+                            style={{
+                                boxShadow: '0px 0px 10px 0px black',
+                            }}
+                        >
+                            <Label
+                                $fontsize='20px'
+                                $mobilefontsize='18.4px'
+                                $tabfontsize='20px'
+                                $color='white'
+                                $fontweight='800'
+                            >
+                                Orthodontics
+                            </Label>
+                        </Section>
+                    </Section>
+                    <Section
+                        $width='33%'
+                        $tabwidth='100%'
+                        $mobilewidth='auto'
+                        $height='auto'
+                        $flexdirection='column'
+                        $padding='0'
+                        $mobilepadding='0'
+                        style={{margin: '20px'}}
+                        whileHover={{scale: 1.05}}
+                        transition={{duration: 0.5, type: 'spring', stiffness: 300}}
+                    >
+                        <StyledImage priority src={Img3.src} width={1000} height={1000} alt="section-img"/>
+                        <Section
+                            $padding='0'
+                            $mobilewidth='auto'
+                            $mobilepadding='5px'
+                            $bgcolor='#4985c9'
+                            $width='100%'
+                            style={{
+                                boxShadow: '0px 0px 10px 0px black',
+                            }}
+                        >
+                            <Label
+                                $fontsize='20px'
+                                $mobilefontsize='18.4px'
+                                $tabfontsize='20px'
+                                $color='white'
+                                $fontweight='800'
+                            >
+                                Cosmetic Surgery
+                            </Label>
+                        </Section>
+                    </Section>
+                </Section>
+                </Section>
+            </Section>
         </>
-           
-    );
+    )
 }
-
-
-
