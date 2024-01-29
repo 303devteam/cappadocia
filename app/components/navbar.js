@@ -1,8 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import { useAnimation, motion, useScroll, useMotionValue, useMotionValueEvent } from "framer-motion";
-import { X, Facebook, Instagram } from "@mui/icons-material";
-import { Title } from './welcomeSection'
+import { X, Facebook, Instagram, WhatsApp } from "@mui/icons-material";
 import styled from "styled-components";
 import Link from "next/link";
 
@@ -69,7 +68,7 @@ const Line = styled(motion.div)`
 
 const Menu = styled(motion.div)`
     width: 100%;
-    height: 90%;
+    height: 93%;
     top: 70px;
     right: 0;
     position: fixed;
@@ -190,6 +189,19 @@ export default function Navbar() {
                         ABOUT US
                     </NavItem>
                 </Link>
+                <NavItem
+                    mobile={`${mobile}`}
+                    initial={{opacity: 0, x: 0}}
+                    transition={{delay: 0.5}}
+                    animate={open ? {opacity: 1, x: 0}: {}}
+                    style={{alignSelf: 'flex-start', marginTop: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}
+                >
+                    <Link href={''}><Facebook style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}} /></Link>
+                    <Link href={''}><X style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}}/></Link>
+                    <Link href={'https://www.instagram.com/lagundent/'} target="_blank"><Instagram style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}}/></Link>
+                    <Link href={''}><WhatsApp style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}}/></Link>
+                </NavItem>
+                
             </Menu>
             {open ? <Background/> : null}
         </>

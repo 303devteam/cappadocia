@@ -59,7 +59,7 @@ export default function WhyUs() {
                             $mobilefontsize='20px'
                             $tabfontsize='20px'
                             $color='gray'
-                            $fontweight='600'
+                            $fontweight='400'
                             $mobilelineheight='25px'
                         >
                             Panoramic X-Rays
@@ -80,7 +80,7 @@ export default function WhyUs() {
                             $mobilefontsize='20px'
                             $tabfontsize='20px'
                             $color='gray'
-                            $fontweight='600'
+                            $fontweight='400'
                             $mobilelineheight='25px'
                         >
                             Intraoral Camera
@@ -101,7 +101,7 @@ export default function WhyUs() {
                             $mobilefontsize='20px'
                             $tabfontsize='20px'
                             $color='gray'
-                            $fontweight='600'
+                            $fontweight='400'
                             $mobilelineheight='25px'
                         >
                             Digital X-Rays
