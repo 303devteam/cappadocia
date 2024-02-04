@@ -26,7 +26,7 @@ export default function ServicesSection() {
                     $padding='0'
                     $mobilepadding='0'
                 >
-                    <StyledImage style={{height: '880px'}} src={comp5.src} width={1000} height={1000} alt="section-img"/>
+                    <StyledImage style={{objectPosition: '0% 70%'}} $imgheight='880px' $tabheight='500px' $tabwidth='100%' $mobileheight='400px' $mobilewidth='100%' src={comp5.src} width={1000} height={1000} alt="section-img"/>
                 </Section>
                 <Section
                     $width='50%'

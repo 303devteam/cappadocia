@@ -27,20 +27,32 @@ export const Label = styled(motion.p)`
 
 export const StyledImage = styled(Image)`
     object-fit: cover;
-    height: ${(props) => (props.$height || '100%')};
-    width: ${(props) => (props.$width || '100%')};
+    height: ${(props) => (props.$imgheight || '100%')};
+    width: ${(props) => (props.$imgwidth || '100%')};
     margin: ${(props) => (props.$margin || '0px')};
+    max-width: ${(props) => (props.$maxwidth || '100%')};
+    max-height: ${(props) => (props.$maxheight || '100%')};
+    min-height: ${(props) => (props.$minheight || '0%')};
+    min-width: ${(props) => (props.$minwidth || '0%')};
 
     @media only screen and (max-width: 768px){
         height: ${(props) => (props.$mobileheight || 'auto')};
         width: ${(props) => (props.$mobilewidth || 'auto')};
         margin: ${(props) => (props.$mobilemargin || '0px')};
+        max-width: ${(props) => (props.$mobilemaxwidth || '100%')};
+        max-height: ${(props) => (props.$mobilemaxheight || '100%')};
+        min-width: ${(props) => (props.$mobileminwidth || '0%')};
+        min-height: ${(props) => (props.$mobileminheight || '0%')};
     }
 
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
-        height: ${(props) => (props.$tabheight || props.$height)};
-        width: ${(props) => (props.$tabwidth || props.$width)};
+        height: ${(props) => (props.$tabheight || props.$imgheight)};
+        width: ${(props) => (props.$tabwidth || props.$imgwidth)};
         margin: ${(props) => (props.$tabmargin || props.$margin)};
+        max-width: ${(props) => (props.$tabmaxwidth || '100%')};
+        max-height: ${(props) => (props.$tabmaxheight || '100%')};
+        min-width: ${(props) => (props.$tabminwidth || '0%')};
+        min-height: ${(props) => (props.$tabminheight || '0%')};
     }
 `;
 

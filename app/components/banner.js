@@ -1,6 +1,6 @@
 'use client'
 import styled from "styled-components"
-import { Title } from "./welcomeSection";
+import { Label } from "./comps";
 import Image from "next/image";
 
 const BannerContainer = styled.div`
@@ -39,7 +39,7 @@ export default function Banner(props) {
                     alt='banner' 
                     width={10000} 
                     height={1000} />
-                <Title size='40px' mobilesize='30px'>{props.bannerText}</Title>
+                <Label $fontsize='40px' $fontweight='600' $mobilefontsize='30px'>{props.bannerText}</Label>
             </BannerContainer>
         </>
     )

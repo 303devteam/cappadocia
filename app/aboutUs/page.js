@@ -1,229 +1,565 @@
 'use client'
-import styled from "styled-components"
-import { motion } from 'framer-motion'
-import Navbar from "../components/navbar"
 import Banner from "../components/banner"
+import Navbar from "../components/navbar"
+import bannerDefault from "../../public/bannerDefault.jpeg"
 import StatsSection from "../components/statsSection"
-import AboutUsBanner from '../../public/bannerDefault.jpeg'
-import { Section, Subsection, Paragraph } from "../components/aboutUs"
-import { Title } from "../components/welcomeSection"
-import Image from "next/image"
-import Img1 from '../../public/au-1.jpeg'
-import Img2 from '../../public/au-2.jpeg'
-import Img3 from '../../public/au-3.jpeg'
-import Img4 from '../../public/au-4.jpeg'
-import Img5 from '../../public/au-5.jpeg'
-import Img6 from '../../public/au-6.png'
-import Icon1 from '../../public/au-icon1.png'
-import Icon2 from '../../public/au-icon2.png'
-import Icon3 from '../../public/au-icon3.png'
+import Footer from "../components/footer"
+import styled from 'styled-components'
+import { Label, Section, Paragraph, StyledImage, StyledIcon } from "../components/comps"
+import img1 from '../../public/au-1.jpeg'
+import img2 from '../../public/au-2.jpeg'
+import img3 from '../../public/au-3.jpeg'
+import img4 from '../../public/au-4.jpeg'
+import img5 from '../../public/au-5.jpeg'
+import img6 from '../../public/au-6.png'
+import img7 from '../../public/au-7.jpeg'
 import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import icon1 from '../../public/au-icon1.png'
+import icon2 from '../../public/au-icon2.png'
+import icon3 from '../../public/au-icon3.png'
 
-
-const SectionImage1 = styled(Image)`
-    margin-top: 200px;
-    @media only screen and (max-width: 1300px) {
-        margin-top: 50px;
-        margin-right: 10px;
-        width: 150px;
-        height: 300px;
+const _Section = styled(Section)`
+    @media only screen and (max-width: 1023px){
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        bottom: 0%;
+        z-index: -1;
+        opacity: 0.3;
     }
-
-    @media only screen and (min-width: 1023px) and (max-width: 1300px) {
-        width: 200px;
-        height: 330px;
-    }
-`;
-
-const SectionImage2 = styled(Image)`
-    margin-left: 20px;
-    @media only screen and (max-width: 1300px) {
-        margin: 0;
-        width: 150px;
-        height: 300px;
-    }
-
-    @media only screen and (min-width: 1023px) and (max-width: 1300px) {
-        width: 200px;
-        height: 330px;
-    }
-`;
-
-const SubsectionV2 = styled(Subsection)`
-    flex-direction: row;
-    @media only screen and (max-width: 1300px) {
-        flex-direction: row;
-    }
-`;
-
-const InfoSection = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-`;
-
-const TextSection = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 `
-
 
 export default function AboutUs() {
     return(
         <>
             <Navbar />
-            <Banner bannerText='About Us' img={AboutUsBanner.src} />
-            <Section>
-                <SubsectionV2 width='50%' alignitems='center' mobileflex='column'>
-                    <SectionImage1 alt="img1" src={Img1.src} width={300} height={300}/>
-                    <SectionImage2 alt="img2" src={Img2.src} width={300} height={300}/>
-                </SubsectionV2>
-                <Subsection width='50%' alignitems='flex-start'>
-                    <Title size='20px' lineheight='10px' mobilesize='20px' color='#4985c9'>About us</Title>
-                    <Title size='30px' mobilesize='25px' color='black'>We Care About Your Health</Title>
-                    <Paragraph style={{marginTop: '10px'}} width='80%' mobilewidth='100%'>
+            <Banner img={bannerDefault.src} bannerText='About Us' />
+            <Section
+                $width='100%'
+                $height='auto'
+                $tabflexdirection='column'
+            >
+                <Section
+                    $width='50%'
+                    $tabwidth='100%'
+                    $height='auto'
+                    $mobileflexdirection='row'
+                    $tabpadding='0'
+                    $padding='0'
+                    $mobilepadding='0'
+                    style={{overflow: 'hidden'}}
+                >
+                    <StyledImage
+                        style={{paddingTop: '150px', paddingRight: '20px'}} 
+                        src={img1.src} 
+                        alt="img1" 
+                        width={1000} 
+                        height={1000}
+                        $maxheight='800px'
+                        $tabmaxheight='600px'
+                        $tabmaxwidth='300px'
+                        $mobileminheight='300px'
+                        $mobileminwidth='200px'
+                    />
+                    <StyledImage 
+                        style={{minHeight: '150px'}}
+                        src={img2.src} 
+                        alt="img2" 
+                        width={1000} 
+                        height={1000} 
+                        $maxheight='700px'
+                        $tabmaxheight='500px'
+                        $tabmaxwidth='300px'
+                        $mobileminheight='300px'
+                        $mobileminwidth='200px'
+                    />
+                </Section>
+                <Section
+                    $width='50%'
+                    $tabwidth='100%'
+                    $mobilepadding='0'
+                    $height='auto'
+                    $flexdirection='column'
+                    $justifycontent='flex-start'
+                    $alignitems='flex-start'
+                    $mobilejustifycontent='flex-start'
+                    $mobilealignitems='flex-start'
+                >
+                    <Label
+                        $fontsize='25px'
+                        $mobilefontsize='20px'
+                        $color='#4985c9'
+                        $fontweight='800'
+                    >
+                        About us
+                    </Label>
+                    <Label
+                        $fontsize='30px'
+                        $tabfontsize='25px'
+                        $tablineheight='30px'
+                        $mobilefontsize='25px'
+                        $color='black'
+                        $fontweight='800'
+                        $lineheight='40px'
+                    >
+                        We care about your health
+                    </Label>
+                    <Paragraph>
                         Our dentists work as general dental practitioners (GDPs), usually in a high street practice, providing dental care to the general public. You can largely choose where you work but you may need to be flexible with your working hours.
                     </Paragraph>
-                    <Title size='30px' mobilesize='25px' color='black'>Dental public health</Title>
-                    <Paragraph style={{marginTop: '10px'}} width='80%' mobilewidth='100%'>
+                    <Label
+                        $fontsize='30px'
+                        $tabfontsize='25px'
+                        $tablineheight='30px'
+                        $mobilefontsize='25px'
+                        $color='black'
+                        $fontweight='800'
+                        $lineheight='40px'
+                        style={{marginTop: '20px'}}
+                    >
+                        Dental public health
+                    </Label>
+                    <Paragraph>
                         Dental public health is a specialty which involves assessing dental health needs and ensuring dental services meet those needs. Your work will look to improve the dental health of communities rather than individuals.
                     </Paragraph>
-                </Subsection>
-            </Section>
-            <Section style={{flexDirection: 'column'}}>
-                <Title style={{textAlign: 'center'}} size='20px' lineheight='10px' mobilesize='20px' color='#4985c9'>Pride in professional service</Title>
-                <Title style={{textAlign: 'center'}} size='30px' mobilesize='25px' color='black'>Personalised Care That You Can Depend</Title>
-                <Section>
-                    <motion.div
-                        whileHover={{scale: 1.1}} 
-                        transition={{type: 'spring', stiffness: 400, damping: 10}}
-                    >
-                        <Subsection alignitems='center'>
-                            <Image alt="img-3" src={Img3.src} width={350} height={350}/>
-                            <Title size='20px' lineheight='50px' mobilesize='20px' color='black'>Family Care</Title>
-                        </Subsection>
-                    </motion.div>
-                    <motion.div               
-                        whileHover={{scale: 1.1}} 
-                        transition={{type: 'spring', stiffness: 400, damping: 10}}        
-                    >
-                        <Subsection alignitems='center'>
-                            <Image alt="img-4" src={Img4.src} width={350} height={350}/>
-                            <Title size='20px' lineheight='50px' mobilesize='20px' color='black'>Advanced Care</Title>
-                        </Subsection>
-                    </motion.div>
-                    <motion.div
-                        whileHover={{scale: 1.1}} 
-                        transition={{type: 'spring', stiffness: 400, damping: 10}}
-                    >
-                        <Subsection alignitems='center'>
-                            <Image alt="img-5" src={Img5.src} width={350} height={350}/>
-                            <Title size='20px' lineheight='50px' mobilesize='20px' color='black'>Online Consultation</Title>
-                        </Subsection>
-                    </motion.div>
                 </Section>
             </Section>
-            <Section>
-                <Subsection width='50%' alignitems='flex-start'>
-                    <Title size='20px' lineheight='10px' mobilesize='20px' color='#4985c9'>Do You Have any Questions?</Title>
-                    <Title size='30px' lineheight='50px' mobilesize='25px' color='black'>Frequently Asked Questiones</Title>
-                    <Accordion style={{marginTop: '20px'}}>
-                        <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1-content"
-                        id="panel1-header"
+            <Section
+                $width='100%'
+                $height='auto'
+                $flexdirection='column'
+                $justifycontent='center'
+                $alignitems='center'
+                $bgcolor='#F8F8F8'
+                $mobilealignitems='flex-start'
+                $tabalignitems='flex-start'
+            >
+                <Label
+                    $fontsize='25px'
+                    $mobilefontsize='20px'
+                    $color='#4985c9'
+                    $fontweight='800'
+                >
+                    Pride in professional service
+                </Label>
+                <Label
+                    $fontsize='30px'
+                    $tabfontsize='25px'
+                    $tablineheight='30px'
+                    $mobilefontsize='25px'
+                    $color='black'
+                    $fontweight='800'
+                    $lineheight='40px'
+                >
+                    Personalised Care That You Can Depend
+                </Label>
+                <Section
+                    $padding='0'
+                    $mobilepadding='0'
+                    $width='100%'
+                    $mobilewidth='100%'
+                    $bgcolor='#f8f8f8'
+                    style={{overflowX: 'scroll'}}
+                >
+                    <Section
+                        $width='100%'
+                        $height='auto'
+                        $mobilewidth='1200px'
+                        $flexdirection='row'
+                        $mobileflexdirection='row'
+                        $justifycontent='center'
+                        $alignitems='center'
+                        $padding='20px'
+                        $tabpadding='10px'
+                        $mobilepadding='10px'
+                        $bgcolor='#F8F8F8'
+                        style={{alignSelf: 'flex-start'}}
+                    >
+                        <Section
+                            $width='33.33%'
+                            $height='auto'
+                            $flexdirection='column'
+                            $mobileflexdirection='column'
+                            $justifycontent='center'
+                            $alignitems='center'
+                            $padding='0'
+                            $mobilepadding='0'
+                            $bgcolor='#F8F8F8'
+                            whileHover={{scale: 1.05}}
+                            transition={{duration: 0.5, type: 'spring', stiffness: 300}}
                         >
-                            <Title style={{fontWeight: 400, lineHeight: '25px'}} size='20px' lineheight='5px' mobilesize='18px' color='#4a4a4a'>How can cosmetic dentistry improve my smile?</Title>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                        <Paragraph>
-                            A smile can be the first thing a person notices about you. If you are not confident with your smile, the dentists at Smile Dental Clinics can work with you to determine what dental care and procedures would work best to improve your smile and boost your self-confidence.
-                        </Paragraph>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion>
-                        <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel2-content"
-                        id="panel2-header"
+                            <StyledImage style={{padding: '10px', maxHeight: '500px', maxWidth: '500px'}} src={img3.src} alt="img3" width={1000} height={1000} />
+                            <Label
+                                $fontsize='20px'
+                                $mobilefontsize='18.4px'
+                                $tabfontsize='20px'
+                                $color='black'
+                                $fontweight='800'
+                            >
+                                Family Care
+                            </Label>
+                        </Section>
+                        <Section
+                            $width='33.33%'
+                            $height='auto'
+                            $flexdirection='column'
+                            $mobileflexdirection='column'
+                            $justifycontent='center'
+                            $alignitems='center'
+                            $padding='0'
+                            $mobilepadding='0'
+                            $bgcolor='#F8F8F8'
+                            whileHover={{scale: 1.05}}
+                            transition={{duration: 0.5, type: 'spring', stiffness: 300}}
                         >
-                            <Title style={{fontWeight: 400, lineHeight: '25px'}} size='20px' lineheight='5px' mobilesize='18px' color='#4a4a4a'>How often shoud I brush and floss my teeth?</Title>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Paragraph>
-                                The dentists at Lagün Dental Clinics recommend following these steps for effective daily oral health care. Tooth brushing and flossing help control the plaque and bacteria that cause dental disease.
-                            </Paragraph>
-                            <Paragraph>
-                                <strong>Tooth Brushing:</strong> Brushing your teeth at least twice a day is recommended for everyone. It is especially important to brush your teeth right before going to bed. The toothbrush you use should be ADA approved with soft bristles. Electronic toothbrushes are also recommended because they are easy to use and effectively remove plaque.
-                            </Paragraph>
-                        </AccordionDetails>
-                    </Accordion>
-                    <Accordion>
-                        <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel2-content"
-                        id="panel2-header"
+                            <StyledImage style={{padding: '10px', maxHeight: '500px', maxWidth: '500px'}} src={img4.src} alt="img4" width={1000} height={1000} />
+                            <Label
+                                $fontsize='20px'
+                                $mobilefontsize='18.4px'
+                                $tabfontsize='20px'
+                                $color='black'
+                                $fontweight='800'
+                            >
+                                Advanced Care
+                            </Label>
+                        </Section>
+                        <Section
+                            $width='33.33%'
+                            $height='auto'
+                            $flexdirection='column'
+                            $mobileflexdirection='column'
+                            $justifycontent='center'
+                            $alignitems='center'
+                            $padding='0'
+                            $mobilepadding='0'
+                            $bgcolor='#F8F8F8'
+                            whileHover={{scale: 1.05}}
+                            transition={{duration: 0.5, type: 'spring', stiffness: 300}}
                         >
-                            <Title style={{fontWeight: 400, lineHeight: '25px'}} size='20px' lineheight='5px' mobilesize='18px' color='#4a4a4a'>Is there a way to prevent stained or discolored teeth?</Title>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Paragraph>
-                                The following are the two most widely used teeth whitening systems:
-                            </Paragraph>
-                            <Paragraph>
-                                <strong>1. At-Home Teeth Whitening:</strong> Most at-home teeth whitening systems come in a gel form that is put into a custom-fitted mouth guard (also known as a tray) that is molded to the shape of your teeth. The gel-filled trays can be worn overnight while you sleep or during the day. The amount of time the trays are required to remain in your mouth depends, although typically, trays are worn twice a day for around 30 minutes each session. This type of whitening procedure can take several weeks before you see results.
-                            </Paragraph>
-                            <Paragraph>
-                                <strong>2. In-Office Teeth Whitening:</strong> Teeth whitening performed at a dental office may require more than one visit, each lasting anywhere from 30 to 60 minutes. You will instantly see results with this type of procedure. The bleaching solution used by the dentist is applied to your teeth, and your gums are completely protected. Some patients experience tooth sensitivity after having their teeth bleached in a dental office, but this typically wears off within a few days.
-                            </Paragraph>
-                        </AccordionDetails>
-                    </Accordion>
-                </Subsection>
-                <Subsection width='50%' alignitems='flex-end'>
-
-                </Subsection>
+                            <StyledImage style={{padding: '10px', maxHeight: '500px', maxWidth: '500px'}} src={img5.src} alt="img5" width={1000} height={1000} />
+                            <Label
+                                $fontsize='20px'
+                                $mobilefontsize='18.4px'
+                                $tabfontsize='20px'
+                                $color='black'
+                                $fontweight='800'
+                            >
+                                Online Consultations
+                            </Label>
+                        </Section>
+                    </Section>
+                </Section>
+            </Section>
+            <Section
+                $width='100%'
+                $height='auto'
+                $flexdirection='column'
+                $justifycontent='center'
+                $alignitems='center'
+                $mobilealignitems='flex-start'
+                $tabalignitems='flex-start'
+                $mobilepadding='0'
+            >
+                <Section
+                    $padding='0'
+                    $width='100%'
+                    $height='auto'
+                >
+                    <Section
+                        $width='50%'
+                        $height='auto'
+                        $flexdirection='column'
+                        $justifycontent='flex-start'
+                        $alignitems='flex-start'
+                        $mobilealignitems='flex-start'
+                        $mobilewidth='100%'
+                        $mobileheight='auto'
+                        $mobilepadding='0'
+                    >
+                        <Label
+                            $fontsize='25px'
+                            $mobilefontsize='20px'
+                            $color='#4985c9'
+                            $fontweight='800'
+                            $lineheight='30px'
+                            $mobilelineheight='20px'
+                        >
+                            Do you have any questions?
+                        </Label>
+                        <Label
+                            $fontsize='30px'
+                            $tabfontsize='25px'
+                            $tablineheight='30px'
+                            $mobilefontsize='25px'
+                            $color='black'
+                            $fontweight='800'
+                            $lineheight='40px'
+                            style={{marginBottom: '30px'}}
+                        >
+                            Frequently Asked Questiones
+                        </Label>
+                        <Accordion defaultExpanded>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel1-content"
+                                id="panel1-header"
+                            >
+                                <Paragraph $fontweight='600' $color='black'>How can cosmetic dentistry improve my smile?</Paragraph>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Paragraph>A smile can be the first thing a person notices about you. If you are not confident with your smile, the dentists at Smile Dental Clinics can work with you to determine what dental care and procedures would work best to improve your smile and boost your self-confidence.</Paragraph>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel2-content"
+                                id="panel2-header"
+                            >
+                                <Paragraph $fontweight='600' $color='black'>How often shoud I brush and floss my teeth?</Paragraph>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Paragraph>
+                                    The dentists at Lagün Dental Clinics recommend following these steps for effective daily oral health care. Tooth brushing and flossing help control the plaque and bacteria that cause dental disease.
+                                </Paragraph>
+                                <Paragraph style={{marginTop: '10px'}}>
+                                    <strong>Tooth Brushing: </strong>Brushing your teeth at least twice a day is recommended for everyone. It is especially important to brush your teeth right before going to bed. The toothbrush you use should be ADA approved with soft bristles. Electronic toothbrushes are also recommended because they are easy to use and effectively remove plaque.
+                                </Paragraph>
+                            </AccordionDetails>
+                        </Accordion>
+                        <Accordion>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon />}
+                                aria-controls="panel2-content"
+                                id="panel2-header"
+                            >
+                                <Paragraph $fontweight='600' $color='black'>Is there a way to prevent stained or discolored teeth?</Paragraph>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <Paragraph>
+                                    The following are the two most widely used teeth whitening systems:
+                                </Paragraph>
+                                <Paragraph style={{marginTop: '10px'}}>
+                                    <strong>1. At-Home Teeth Whitening: </strong>Most at-home teeth whitening systems come in a gel form that is put into a custom-fitted mouth guard (also known as a tray) that is molded to the shape of your teeth. The gel-filled trays can be worn overnight while you sleep or during the day. The amount of time the trays are required to remain in your mouth depends, although typically, trays are worn twice a day for around 30 minutes each session. This type of whitening procedure can take several weeks before you see results.
+                                </Paragraph>
+                                <Paragraph style={{marginTop: '10px'}}>
+                                    <strong>2. In-Office Teeth Whitening: </strong>Teeth whitening performed at a dental office may require more than one visit, each lasting anywhere from 30 to 60 minutes. You will instantly see results with this type of procedure. The bleaching solution used by the dentist is applied to your teeth, and your gums are completely protected. Some patients experience tooth sensitivity after having their teeth bleached in a dental office, but this typically wears off within a few days.
+                                </Paragraph>
+                            </AccordionDetails>
+                        </Accordion>
+                    </Section>
+                    <Section
+                        $width='50%'
+                        $height='auto'
+                        $flexdirection='column'
+                        $justifycontent='center'
+                        $alignitems='center'
+                        $mobilewidth='100%'
+                        $mobileheight='auto'
+                        $mobilepadding='0'
+                    >
+                        <StyledImage style={{marginTop: '20px'}} $maxheight='600px' $maxwidth='100%' src={img7.src} alt="img7" width={1000} height={1000} />
+                    </Section>
+                </Section>
+            </Section>
+            <Section
+                $width='100%'
+                $height='auto'
+                $flexdirection='row'
+                $justifycontent='center'
+                $alignitems='center'
+                $mobilealignitems='flex-start'
+                $tabalignitems='flex-start'
+                $bgcolor='transparent'
+            >
+                <Section
+                    $width='50%'
+                    $height='auto'
+                    $mobilewidth='100%'
+                    $tabwidth='100%'
+                    $flexdirection='column'
+                    $justifycontent='flex-start'
+                    $alignitems='flex-start'
+                    $mobilealignitems='flex-start'
+                    $mobilejustifycontent='flex-start'
+                    $bgcolor='transparent'
+                    $padding='0'
+                    $mobilepadding='0'
+                >
+                     <Label
+                        $fontsize='25px'
+                        $mobilefontsize='20px'
+                        $color='#4985c9'
+                        $fontweight='800'
+                    >
+                        Trust Us
+                    </Label>
+                    <Label
+                        $fontsize='30px'
+                        $tabfontsize='25px'
+                        $tablineheight='30px'
+                        $mobilefontsize='25px'
+                        $color='black'
+                        $fontweight='800'
+                        $lineheight='40px'
+                    >
+                        Keep Improving Our Dental Clinic
+                    </Label>
+                    <Section
+                        $width='100%'
+                        $height='auto'
+                        $flexdirection='column'
+                        $justifycontent='flex-start'
+                        $alignitems='center'
+                        $mobilealignitems='flex-start'
+                        $tabalignitems='flex-start'
+                        $padding='10px'
+                        $mobilepadding='10px'
+                        $bgcolor='transparent'
+                    >
+                        <Section
+                            $width='100%'
+                            $height='auto'
+                            $flexdirection='row'
+                            $mobileflexdirection='row'
+                            $justifycontent='flex-start'
+                            $alignitems='center'
+                            $mobilealignitems='flex-start'
+                            $tabalignitems='center'
+                            $padding='0'
+                            $mobilepadding='0'
+                            $bgcolor='transparent'
+                        >
+                            <StyledIcon src={icon1.src} $width='100px' $height='100px' $mobilewidth='80px' $mobileheight='80px' alt="icon1" width={1000} height={1000} />
+                            <Section
+                                $flexdirection='column'
+                                $mobileflexdirection='column'
+                                $justifycontent='center'
+                                $alignitems='flex-start'
+                                $mobilealignitems='flex-start'
+                                $padding='0'
+                                $mobilepadding='0'
+                                $bgcolor='transparent'
+                            >
+                                <Label
+                                    $fontsize='20px'
+                                    $tabfontsize='18px'
+                                    $tablineheight='30px'
+                                    $mobilefontsize='16px'
+                                    $color='gray'
+                                    $fontweight='800'
+                                    $lineheight='40px'
+                                >
+                                    Keep Improving Our Dental Clinic
+                                </Label>
+                                <Paragraph>
+                                    The Zoom whitening process uses a 25% hydrogen peroxide gel that is activated via a special UV light. You’ll see results immediately after the procedure, including measurements of your new tooth shade vs. your original. Your teeth will lose moisture during the procedure and be dehydrated, but will regain their moisture over the next several days. This is why it’s recommended to wait about a week before proceeding with any further cosmetic dentistry work, such as crowns or veneers.
+                                </Paragraph>
+                            </Section>
+                        </Section>
+                        <Section
+                            $width='100%'
+                            $height='auto'
+                            $flexdirection='row'
+                            $mobileflexdirection='row'
+                            $justifycontent='flex-start'
+                            $alignitems='center'
+                            $mobilealignitems='flex-start'
+                            $tabalignitems='center'
+                            $padding='0'
+                            $mobilepadding='0'
+                            $bgcolor='transparent'
+                        >
+                            <StyledIcon src={icon2.src} $width='100px' $height='100px' $mobilewidth='80px' $mobileheight='80px' alt="icon2" width={1000} height={1000} />
+                            <Section
+                                $flexdirection='column'
+                                $mobileflexdirection='column'
+                                $justifycontent='center'
+                                $alignitems='flex-start'
+                                $mobilealignitems='flex-start'
+                                $padding='0'
+                                $mobilepadding='0'
+                                $bgcolor='transparent'
+                            >
+                                <Label
+                                    $fontsize='20px'
+                                    $tabfontsize='18px'
+                                    $tablineheight='30px'
+                                    $mobilefontsize='16px'
+                                    $color='gray'
+                                    $fontweight='800'
+                                    $lineheight='40px'
+                                >
+                                    Emergency dental care
+                                </Label>
+                                <Paragraph>
+                                    24/7 emergency dental care. Emergency treatments include: -Tooth extractions. -Root canals. -Treating knocked-out (avulsed) teeth.
+                                </Paragraph>
+                            </Section>
+                        </Section>
+                        <Section
+                            $width='100%'
+                            $height='auto'
+                            $flexdirection='row'
+                            $mobileflexdirection='row'
+                            $justifycontent='flex-start'
+                            $alignitems='center'
+                            $mobilealignitems='flex-start'
+                            $tabalignitems='center'
+                            $padding='0'
+                            $mobilepadding='0'
+                            $bgcolor='transparent'
+                        >
+                            <StyledIcon src={icon3.src} $width='100px' $height='100px' $mobilewidth='80px' $mobileheight='80px' alt="icon3" width={1000} height={1000} />
+                            <Section
+                                $flexdirection='column'
+                                $mobileflexdirection='column'
+                                $justifycontent='center'
+                                $alignitems='flex-start'
+                                $mobilealignitems='flex-start'
+                                $padding='0'
+                                $mobilepadding='0'
+                                $bgcolor='transparent'
+                            >
+                                <Label
+                                    $fontsize='20px'
+                                    $tabfontsize='18px'
+                                    $tablineheight='30px'
+                                    $mobilefontsize='16px'
+                                    $color='gray'
+                                    $fontweight='800'
+                                    $lineheight='40px'
+                                >
+                                    Dental Surgery & Treatment
+                                </Label>
+                                <Paragraph>
+                                    - Implant in a Day - Hollywood Smile - Zirconium Dental Veneers - Laminated Tooth Veneer - Porcelain Dental Veneers - E-Max Dental Veneer - Digital Smile Design - Orthodontics - Pediatric Dentistry - Aesthetic Filling - Root Canal Treatment - Teeth whitening - Braces Treatment - Wisdom Tooth Extraction - Transparent Plate Treatment - Pedodontics - Botox
+                                </Paragraph>
+                            </Section>
+                        </Section>
+                    </Section>
+                </Section>
+                <_Section
+                    $width='auto'
+                    $height='auto'
+                    $flexdirection='column'
+                    $justifycontent='flex-start'
+                    $alignitems='center'
+                    $mobilealignitems='flex-start'
+                    $tabalignitems='flex-start'
+                    $padding='0'
+                    $mobilepadding='0'
+                    $bgcolor='transparent'
+                >
+                    <StyledImage $imgwidth='400px' $imgheight='500px' src={img6.src} alt="img6" width={1000} height={1000} />
+                </_Section>
             </Section>
             <StatsSection />
-            <Section>
-                <Subsection width='100%'>
-                    <InfoSection>
-                        <Image alt="icon1" src={Icon1.src} width={100} height={100}/>
-                        <TextSection>
-                            <Title size='20px' lineheight='50px' mobilesize='20px' color='#4985c9'>Results Are Instantaneous</Title>
-                            <Paragraph width='100%' mobilewidth='100%'>
-                                The Zoom whitening process uses a 25% hydrogen peroxide gel that is activated via a special UV light. You’ll see results immediately after the procedure, including measurements of your new tooth shade vs. your original. Your teeth will lose moisture during the procedure and be dehydrated, but will regain their moisture over the next several days. This is why it’s recommended to wait about a week before proceeding with any further cosmetic dentistry work, such as crowns or veneers.
-                            </Paragraph>
-                        </TextSection>
-                    </InfoSection>
-                    <InfoSection>
-                        <Image alt="icon2" src={Icon2.src} width={80} height={80}/>
-                        <TextSection>
-                            <Title size='20px' lineheight='50px' mobilesize='20px' color='#4985c9'>Emergency dental care</Title>
-                            <Paragraph width='100%' mobilewidth='100%'>
-                                24/7 emergency dental care. Emergency treatments include: -Tooth extractions. -Root canals. -Treating knocked-out (avulsed) teeth.
-                            </Paragraph>
-                        </TextSection>
-                    </InfoSection>
-                    <InfoSection>
-                        <Image alt="icon3" src={Icon3.src} width={100} height={100}/>
-                        <TextSection>
-                            <Title size='20px' lineheight='50px' mobilesize='20px' color='#4985c9'>Dental Surgery & Treatment</Title>
-                            <Paragraph width='100%' mobilewidth='100%'>
-                                Implant in a Day - Hollywood Smile - Zirconium Dental Veneers - Laminated Tooth Veneer - Porcelain Dental Veneers - E-Max Dental Veneer - Digital Smile Design - Orthodontics - Pediatric Dentistry - Aesthetic Filling - Root Canal Treatment - Teeth whitening - Braces Treatment - Wisdom Tooth Extraction - Transparent Plate Treatment - Pedodontics - Botox
-                            </Paragraph>
-                        </TextSection>
-                    </InfoSection>
-                </Subsection>
-                <Subsection width='50%' alignitems='center'>
-                    <Image alt="img-6" src={Img6.src} width={500} height={500}/>
-                </Subsection>
-            </Section>
+            <Footer />
         </>
     )
 }
