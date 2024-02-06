@@ -73,6 +73,7 @@ export const Section = styled(motion.div)`
     flex-direction: ${props => props.$flexdirection || 'row'};
     padding: ${props => props.$padding || '40px'};
 
+
     @media only screen and (max-width: 768px) {
         flex-direction: ${(props) => (props.$mobileflexdirection || 'column')};
         justify-content: ${(props) => (props.$mobilejustifycontent || 'center')};

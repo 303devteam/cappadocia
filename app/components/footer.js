@@ -1,9 +1,15 @@
 'use client'
-import { Section, Label } from "./comps"
-import { Facebook, X, Instagram, WhatsApp, Face } from '@mui/icons-material';
+import { Section, Label, StyledImage } from "./comps"
+import { Facebook, X, Instagram, WhatsApp, Face, Style } from '@mui/icons-material';
 import Link from "next/link"
+import Image from "next/image"
+import logo1_BG from "../../public/logo1_BG.png"
+import resizedlogo from "../../public/resizedlogo.png"
+import logo2 from "../../public/logo2.png"
+import logo1 from "../../public/logo1.png"
+
 export default function Footer() {
-    return(
+    return (
         <>
             <Section
                 $width='100%'
@@ -114,7 +120,7 @@ export default function Footer() {
                             $link
                         >
                             About Us
-                    </Label>
+                        </Label>
                     </Link>
                     <Link href={'/services'}>
                         <Label
@@ -244,16 +250,60 @@ export default function Footer() {
                 >
                     © 2023 Lagün Dent. All Rights Reserved
                 </Label>
+
+                <Section
+                    $width='270px'
+                    $height='60px'
+                    $padding='0px'
+                    $bgcolor='#031724'
+                    $flexdirection='row'
+                    $justifycontent='center'
+                    $alignitems='center'
+                    $mobileflexdirection='column'
+                
+                >
+
+                <Label
+                    $fontsize='18px'
+                    $tabfontsize='18px'
+                    $mobilefontsize='16px'
+                    $color='white'
+                    $fontweight='400'
+                    $lineheight='20px'
+                >
+                    powered by
+                </Label>
+
+                <StyledImage src={logo1} alt="logo1" 
+                $height='50px' 
+                $width='83px'
+                $mobilewidth='120px'
+                $mobileheight='75px'
+
+                />
+                    
+                
+
+               
+
+
+
+                </Section>
+
+               
+
+
+
                 <Section
                     $padding='0'
                     $mobilepadding='0'
                     $bgcolor='#031724'
                     $mobileflexdirection='row'
                 >
-                    <Link href={''}><Facebook style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}} /></Link>
-                    <Link href={''}><X style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}}/></Link>
-                    <Link href={'https://www.instagram.com/lagundent/'} target="_blank"><Instagram style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}}/></Link>
-                    <Link href={''}><WhatsApp style={{color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer'}}/></Link>
+                    <Link href={''}><Facebook style={{ color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer' }} /></Link>
+                    <Link href={''}><X style={{ color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer' }} /></Link>
+                    <Link href={'https://www.instagram.com/lagundent/'} target="_blank"><Instagram style={{ color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer' }} /></Link>
+                    <Link href={''}><WhatsApp style={{ color: 'white', margin: '0px 10px', width: '30px', height: '30px', cursor: 'pointer' }} /></Link>
                 </Section>
             </Section>
         </>
